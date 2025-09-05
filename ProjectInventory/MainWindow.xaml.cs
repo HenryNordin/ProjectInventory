@@ -38,11 +38,6 @@ namespace ProjectInventory
             return new Item(txtName.Text, txtDescription.Text);
         }
 
-        private void ClearBoxesAndLists()
-        {
-            throw new NotImplementedException();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             UpdateGUI();
