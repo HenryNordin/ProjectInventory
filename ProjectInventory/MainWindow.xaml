@@ -6,16 +6,23 @@
         xmlns:local="clr-namespace:ProjectInventory"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
-    <Grid>
+    <Grid Background="#FF292929">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="109*"/>
             <ColumnDefinition Width="147*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="439,606,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
-        <ListBox x:Name="lstItems" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="136,352,608,71" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="435,100,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="118,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="284,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="lstItems" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="55,207,56,58" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="446,94,0,0" VerticalAlignment="Top" Click="btnAdd_Click" Height="47" Width="45"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="118,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="50"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="284,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="50"/>
+        <Label Content="Item Manager" HorizontalAlignment="Left" Margin="55,10,0,0" VerticalAlignment="Top" Height="52" Width="183" FontWeight="Bold">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFADADAD"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
 
     </Grid>
 </Window>

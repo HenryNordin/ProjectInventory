@@ -28,5 +28,10 @@ namespace ProjectInventory
             get { return description; }
             set { description = value; }
         }
+
+        public override string ToString()
+        {
+            return name + ": " + description;
+        }
     }
 }
