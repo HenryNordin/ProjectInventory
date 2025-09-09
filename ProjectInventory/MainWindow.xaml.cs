@@ -112,5 +112,15 @@ namespace ProjectInventory
                 MessageBox.Show("Please select a Item from the list before you press the \"Delete\" button!");
             }
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLoad_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
