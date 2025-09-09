@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -113,14 +114,56 @@ namespace ProjectInventory
             }
         }
 
+        // Opens the save file dialog and saves data to a file
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            string errMessage = "Something went wrong while trying to save data!";
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt";
+            saveFileDialog.Title = "Save data File";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.AddExtension = true;
+
+            bool? result = saveFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                string fileName = saveFileDialog.FileName;
+
+                bool ok = itemManager.WriteDataToFile(fileName); // call on instance
+                if (!ok)
+                {
+                    MessageBox.Show(errMessage);
+                }
+                else
+                {
+                    MessageBox.Show("Data saved to file:" + Environment.NewLine + fileName);
+                }
+            }
         }
 
+
+        // Opens the open file dialog and loads data from a file
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
+            string errMessage = "Something went wrong when opening the file";
 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt";
+            openFileDialog.Title = "Open data File";
+
+            bool? result = openFileDialog.ShowDialog();
+            if (result == true)
+            {
+                string fileName = openFileDialog.FileName;
+
+                bool ok = itemManager.ReadDataFromFile(fileName);
+                if (!ok)
+                    MessageBox.Show(errMessage);
+                else
+                    UpdateGUI();
+            }
         }
     }
 }

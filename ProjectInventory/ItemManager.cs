@@ -60,5 +60,17 @@ namespace ProjectInventory
                 delete = false;
             return delete;
         }
+
+        public bool ReadDataFromFile(string fileName)
+        {
+            FileManager fileManager = new FileManager();
+            return fileManager.ReadItemListFromFile(itemList, fileName);
+        }
+
+        public bool WriteDataToFile(string fileName)
+        {
+            FileManager fileManager = new FileManager();
+            return fileManager.SaveItemListToFile(itemList, fileName);
+        }
     }
 }
