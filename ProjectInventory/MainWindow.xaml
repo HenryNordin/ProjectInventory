@@ -33,30 +33,36 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="txtName"
-                     Height="35"
-                     VerticalContentAlignment="Center"
-                     VerticalAlignment="Top"
-                     Margin="0 0 10 0"
-                     Padding="8,5"
-                     Text="Item Name"
-                     HorizontalAlignment="Stretch"
-                     MinWidth="80"
-                     Grid.Column="0"/>
+            <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                <Label x:Name="lblName"
+                       Content="Item name"
+                       Foreground="White"
+                       Margin="0 0 0 2"/>
+                <TextBox x:Name="txtName"
+                         Height="35"
+                         VerticalContentAlignment="Center"
+                         Padding="8,5"
+                         Text="Item Name"
+                         HorizontalAlignment="Stretch"
+                         MinWidth="80"/>
+            </StackPanel>
 
-            <TextBox x:Name="txtDescription"
-                     Height="65"
-                     VerticalContentAlignment="Top"
-                     VerticalAlignment="Top"
-                     Margin="0 0 10 0"
-                     Padding="8,5"
-                     Text="Description"
-                     HorizontalAlignment="Stretch"
-                     MinWidth="150"
-                     AcceptsReturn="True"
-                     TextWrapping="Wrap"
-                     VerticalScrollBarVisibility="Auto"
-                     Grid.Column="1"/>
+            <StackPanel Grid.Column="1" Margin="0 0 10 0">
+                <Label x:Name="lblDescription"
+                       Content="Description"
+                       Foreground="White"
+                       Margin="0 0 0 2"/>
+                <TextBox x:Name="txtDescription"
+                         Height="65"
+                         VerticalContentAlignment="Top"
+                         Padding="8,5"
+                         Text="Description"
+                         HorizontalAlignment="Stretch"
+                         MinWidth="150"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto"/>
+            </StackPanel>
 
             <Button x:Name="btnAdd"
                     Content="Add"
@@ -76,14 +82,12 @@
                     Grid.Column="3"/>
         </Grid>
 
-        <!-- Main content -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Left side -->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -123,7 +127,6 @@
                 </StackPanel>
             </Grid>
 
-            <!-- Right side -->
             <Border Grid.Column="1"
                     BorderBrush="Gray"
                     BorderThickness="1"
